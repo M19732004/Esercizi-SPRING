@@ -34,6 +34,6 @@ public class CarController {
     public Car editCarType(@RequestParam String type,@PathVariable Long id){
         Car editedCar=carRepository.getReferenceById(id);
         editedCar.setType(type);
-        return editedCar;
+        return carRepository.saveAndFlush(editedCar);
     }
 }
