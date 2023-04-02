@@ -10,7 +10,7 @@
     </parent>
     <groupId>co.develhope</groupId>
     <artifactId>deploy-1</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>deploy-1</name>
     <description>deploy-1</description>
     <properties>
