@@ -1,0 +1,12 @@
+---
+environment: test
+myCustomVarTree:
+  welcomeMsg : Hello from Test
+server:
+  port: 4000
+---
+environment: prod
+myCustomVarTree:
+  welcomeMsg : Hello from Prod
+server:
+  port: 5000
