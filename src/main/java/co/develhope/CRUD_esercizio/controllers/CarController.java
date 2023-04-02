@@ -32,8 +32,14 @@ public class CarController {
     }
     @PutMapping("/{id}")
     public Car editCarType(@RequestParam String type,@PathVariable Long id){
+        if(carRepository.existsById(id)){
         Car editedCar=carRepository.getReferenceById(id);
         editedCar.setType(type);
-        return carRepository.saveAndFlush(editedCar);
+        return carRepository.saveAndFlush(editedCar);}else{return null;
+        }
+    }
+    @DeleteMapping("/{id}")
+    public void deleteSingleCarById(@PathVariable Long id){
+        carRepository.deleteById(id);
     }
 }
