@@ -1,0 +1,19 @@
+
+server:
+  port: 7070
+---
+environment: development
+server:
+  port: 8090
+---
+environment: test
+server:
+  port: 8080
+---
+environment: integration
+myCustomVarTree:
+  customVar: 42
+  devName: Maria Coman
+server:
+  port: 3000
+
