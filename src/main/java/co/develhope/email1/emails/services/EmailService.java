@@ -15,14 +15,14 @@ import javax.mail.internet.MimeMessage;
 public class EmailService {
 
     @Autowired
-    private JavaMailSender emailSender;
+    private JavaMailSender javaMailSender;
     @Value("${spring.mail.username}")
     private String sender;
 
 
 
     public void sentMime(String title,String email,String text)throws MessagingException {
-        MimeMessage mimeMessage = emailSender.createMimeMessage();
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
         String htmlMsg = "<h1>Hello World!</h1>" +
                 "<h2>You have a new message: </h2>" +
@@ -32,7 +32,7 @@ public class EmailService {
         helper.setTo(email);
         helper.setSubject(title);
         helper.setFrom(sender);
-        emailSender.send(mimeMessage);
+        javaMailSender.send(mimeMessage);
 
 
     }
