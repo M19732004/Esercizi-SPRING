@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class NotificationController {
     @Autowired
     public SimpMessagingTemplate simpMessagingTemplate;
-    @PostMapping("/Notification")
+    @PostMapping("/notification")
     public ResponseEntity sendNotificationToClients (@RequestBody MessageDTO message){
         simpMessagingTemplate.convertAndSend("/topic/greetings",message);
         return ResponseEntity.status(HttpStatus.OK).build();
